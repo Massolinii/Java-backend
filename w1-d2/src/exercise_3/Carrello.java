@@ -12,6 +12,12 @@ class Carrello {
         this.elencoArticoli = new ArrayList<>();
         this.totale = 0.0;
     }
+    public void stampaCarrello() {
+    	System.out.println("--Carrello--");
+    	System.out.println(this.clienteAssociato.nome) {
+    		
+    	}
+    }
 
     public void aggiungiArticolo(Articolo articolo) {
         elencoArticoli.add(articolo);
