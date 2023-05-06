@@ -16,8 +16,8 @@ public class video extends mediaElement implements volumeInterface, brightnessIn
 		return volume;
 	}
 
-	public void setVolume(int volume) {
-		this.volume = volume;
+	public void setVolume(int newVolume) {
+		this.volume = newVolume;
 	}
 
 	public int getDuration() {
@@ -32,8 +32,8 @@ public class video extends mediaElement implements volumeInterface, brightnessIn
 		return brightness;
 	}
 
-	public void setBrightness(int brightness) {
-		this.brightness = brightness;
+	public void setBrightness(int newBrightness) {
+		this.brightness = newBrightness;
 	}
 	
 	@Override
@@ -81,10 +81,6 @@ public class video extends mediaElement implements volumeInterface, brightnessIn
 		
 		for (int i = 0; i<dur; i++) {
             System.out.println(this.toString() + " -- Duration: " + getDuration()  + " -- Volume: " + displayVolume + " -- Brightness: " + displayBrightness);
-        }
-				
-				
+        }			
 	}
-	
-	
 }

@@ -26,8 +26,8 @@ public class audio extends mediaElement implements volumeInterface {
 		return volume;
 	}
 	
-	public void setVolume(int volume) {
-		this.volume = volume;
+	public void setVolume(int newVolume) {
+		this.volume = newVolume;
 	}
 
 	@Override
@@ -60,6 +60,4 @@ public class audio extends mediaElement implements volumeInterface {
             System.out.println(this.toString() + " -- Duration: " + getDuration() + " -- Volume: " + displayVolume);
         }
 	}
-
-
 }

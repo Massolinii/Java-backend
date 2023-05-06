@@ -14,8 +14,8 @@ public class image extends mediaElement implements brightnessInterface{
 		return brightness;
 	}
 	
-	public void setBrightness(int i) {
-		this.brightness = i;
+	public void setBrightness(int newBrightness) {
+		this.brightness = newBrightness;
 		
 	}
 
@@ -44,6 +44,5 @@ public class image extends mediaElement implements brightnessInterface{
 		
 		System.out.println(this.toString() + " -- Brightness: " + displayBrightness);
 	}
-
 
 }
