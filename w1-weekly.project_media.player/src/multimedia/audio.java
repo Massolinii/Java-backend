@@ -57,7 +57,7 @@ public class audio extends mediaElement implements volumeInterface {
 		int dur = this.getDuration();
 		
 		for (int i = 0; i<dur; i++) {
-            System.out.println(this.toString() + " -- Duration: " + getDuration() + " -- Volume: " + displayVolume);
+            System.out.println(this.toString() + " -- Volume: " + displayVolume);
         }
 	}
 }

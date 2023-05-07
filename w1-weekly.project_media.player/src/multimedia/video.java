@@ -80,7 +80,7 @@ public class video extends mediaElement implements volumeInterface, brightnessIn
 		int dur = this.getDuration();
 		
 		for (int i = 0; i<dur; i++) {
-            System.out.println(this.toString() + " -- Duration: " + getDuration()  + " -- Volume: " + displayVolume + " -- Brightness: " + displayBrightness);
+            System.out.println(this.toString() + " -- Volume: " + displayVolume + " -- Brightness: " + displayBrightness);
         }			
 	}
 }

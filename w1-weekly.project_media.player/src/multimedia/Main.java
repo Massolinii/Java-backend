@@ -125,7 +125,7 @@ public class Main {
                 System.out.println("// Your stuff :");
                 for (int i = 0; i < mediaElements.length; i++) {
                     mediaElement element = mediaElements[i];
-                    System.out.println((i + 1) + ". " + element.getTitle() + " (" + element.getClass().getSimpleName() + ")");
+                    System.out.println("// " + (i + 1) + ". " + element.getTitle() + " (" + element.getClass().getSimpleName() + ")");
                 }
             }
             printMediaList = true; // Imposta printMediaList a true per stampare la lista nel prossimo ciclo
@@ -133,6 +133,7 @@ public class Main {
             System.out.print("// Enter the index of the media item to play (1-5) or 0 to exit:");
             
             selectedIndex = scanner.nextInt();
+            
 
             if (selectedIndex >= 1 && selectedIndex <= 5) {
                 mediaElement selectedMedia = mediaElements[selectedIndex - 1];
@@ -142,6 +143,7 @@ public class Main {
                 System.out.println("// 3. Modifiy Brightness (Videos and Images");
                 System.out.print("// Choose an option:");
                 int option = scanner.nextInt();
+                scanner.nextLine();
 
                 switch (option) {
                     case 1:
@@ -153,8 +155,7 @@ public class Main {
                             ((image) selectedMedia).show();
                         }
                         System.out.println("// Press ENTER to go back:");
-                        System.out.println("");
-                        printMediaList = false; // Imposta printMediaList a false per non stampare la lista dopo aver premuto Play
+                        scanner.nextLine();
                         break;
                     case 2:
                         if (selectedMedia instanceof volumeInterface) {
