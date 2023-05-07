@@ -116,9 +116,6 @@ public class Main {
                 scanner.nextLine();
             }
         }
-        
-        // Stampa la lista una volta arrivata a 5 elementi
-        
 
         int selectedIndex;
         boolean printMediaList = true;
