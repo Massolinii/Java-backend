@@ -8,6 +8,10 @@ public abstract class mediaElement {
 		this.title = title;
 	}
 	
+    public String getTitle() {
+        return title;
+    }
+	
 	public String toString() {
 		return "Media : " + title;
 	}
