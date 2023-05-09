@@ -6,12 +6,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="src/lib/logback-core-1.4.7.jar"/>
-	<classpathentry kind="lib" path="src/lib/logback-core-1.4.7 (1).jar"/>
-	<classpathentry kind="lib" path="src/lib/slf4j-api-2.0.7.jar"/>
-	<classpathentry kind="lib" path="lib/logback-core-1.4.7.jar"/>
-	<classpathentry kind="lib" path="lib/logback-core-1.4.7 (1).jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-api-2.0.7.jar"/>
 	<classpathentry kind="lib" path="lib/logback-classic-1.4.7.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.4.7.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-2.0.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

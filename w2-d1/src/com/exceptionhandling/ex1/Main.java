@@ -47,7 +47,7 @@ public class Main {
 
             } catch (InputMismatchException e) {
                 System.out.println("Valore non valido. Inserisci un numero intero.");
-                scanner.nextLine(); // Pulisce il buffer dello scanner
+                scanner.nextLine();
             } catch (NumberFormatException e) {
                 System.out.println("Valore non valido. Inserisci un numero intero.");
             } catch (Exception e) {

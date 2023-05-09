@@ -1,0 +1,21 @@
+10:49:54.522 [main] INFO  Main - Test Info Logger
+10:49:54.528 [main] ERROR Main - Test Error Logger
+10:49:54.528 [main] WARN  Main - Test Warning Logger
+10:49:54.528 [main] DEBUG Main - Test Debug Logger
+10:50:11.344 [main] INFO  Main - Test Info Logger
+10:50:11.350 [main] ERROR Main - Test Error Logger
+10:50:11.350 [main] WARN  Main - Test Warning Logger
+10:50:11.350 [main] DEBUG Main - Test Debug Logger
+11:50:14.660 [main] INFO  Main - Contains 'Secondo Elemento' : true
+11:50:14.665 [main] INFO  Main - Collection isEmpty: false
+11:50:14.665 [main] INFO  Main - Collection size: 3
+11:50:14.666 [main] INFO  Main - Primo Elemento
+11:50:14.666 [main] INFO  Main - Secondo Elemento
+11:50:14.666 [main] INFO  Main - Terzo Elemento
+11:54:16.793 [main] INFO  Main - Contains 'Secondo Elemento' : true
+11:54:16.797 [main] INFO  Main - Collection isEmpty: false
+11:54:16.798 [main] INFO  Main - Collection size: 3
+11:54:16.798 [main] INFO  Main - Primo Elemento
+11:54:16.798 [main] INFO  Main - Secondo Elemento
+11:54:16.798 [main] INFO  Main - Terzo Elemento
+11:54:16.798 [main] INFO  Main - Collection isEmpty: true
