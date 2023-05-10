@@ -12,7 +12,7 @@ public class Main {
 		
 		int numPar = Integer.parseInt(scan.nextLine());
 		
-		ArrayList<String> parole = new ArrayList<>();
+		Set<String> parole = new HashSet<>();
 		Set<String> parUniche = new HashSet<>();
 		Set<String> parDuplicate = new HashSet<>();
 		
@@ -29,7 +29,7 @@ public class Main {
 		}
 		
 		System.out.println("RISULTATI :");
-		System.out.print("Parole duplicate: ");
+		System.out.println("Parole duplicate: ");
 		for (String parola : parDuplicate) {
 			System.out.println(parola);
 		}

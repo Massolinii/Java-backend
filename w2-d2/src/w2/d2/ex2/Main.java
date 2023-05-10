@@ -17,6 +17,7 @@ public class Main {
 		// arrayRovesciato();
 		
 		ArrayList<Integer> listaZeroDieci = new ArrayList();
+		listaZeroDieci.add(0);
 		listaZeroDieci.add(1);
 		listaZeroDieci.add(2);
 		listaZeroDieci.add(3);
@@ -31,7 +32,9 @@ public class Main {
 		boolean checkTrue = true;
 		boolean checkFalse = false;
 		
+		System.out.println("Numeri Pari : ");
 		pariDispari(listaZeroDieci, checkTrue);
+		System.out.println("Numeri Dispari : ");
 		pariDispari(listaZeroDieci, checkFalse);
 
 		
