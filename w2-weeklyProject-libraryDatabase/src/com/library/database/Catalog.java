@@ -17,8 +17,8 @@ public class Catalog {
 	
 	private List<Deployable> items;
 	
-	private static final String CHARSET = "UTF-8";
 	private static final Logger logger = LoggerFactory.getLogger(Catalog.class);
+	
 	private static String path = "data/catalog.txt";
 	private static File file = new File(path);
 	
@@ -27,11 +27,13 @@ public class Catalog {
 	}
 	
 	public boolean addElement(Deployable item) {
+		
 		if (searchISBN(item.getIsbn()).isPresent()) {
-			logger.error("Item with ISBN {} already exists", item.getIsbn());
+			logger.error("Item with this ISBN already exists", item.getIsbn());
 			return false;
 		}
         items.add(item);
+        System.out.println("Added item: " + item.getIsbn()); // Stampa x debug
 		return true;
     }
 	
@@ -44,6 +46,7 @@ public class Catalog {
     }
 
 	public Optional<Deployable> searchISBN(String isbn) {
+		System.out.println("Searching for item: " + isbn); // Stampa x debug
 	    return items.stream()
 	        .filter(item -> item.getIsbn().equals(isbn))
 	        .findAny();
@@ -68,7 +71,7 @@ public class Catalog {
 				.collect(Collectors.joining("\n"));
 		
 		try {
-			FileUtils.writeStringToFile(file, data, CHARSET);
+			FileUtils.writeStringToFile(file, data, "UTF-8");
 		} catch (IOException e) {
 			logger.error("Error writing to disk", e);
 			throw e;
@@ -77,7 +80,7 @@ public class Catalog {
 	
 	public void loadFromDisk() throws IOException {
 		try {
-			List<String> lines = FileUtils.readLines(file, CHARSET);
+			List<String> lines = FileUtils.readLines(file, "UTF-8");
 			
 			items = lines.stream().map(line -> {
 				String[] parts = line.split(",");

@@ -28,36 +28,86 @@ public class Library {
 				case 1:
 					System.out.println("Adding a new Element in the Catalog.");
 			        System.out.println("Please select type: (1 for Books, 2 for Magazine)");
-			        int elementType = Integer.parseInt(scanner.nextLine());
+			        int elementType;
+			        while (true) {
+			            try {
+			                elementType = Integer.parseInt(scanner.nextLine());
+			                if (elementType != 1 && elementType != 2) {
+			                    System.out.println("Invalid type. Please enter 1 for Books or 2 for Magazine");
+			                } else {
+			                    break;
+			                }
+			            } catch (NumberFormatException e) {
+			                System.out.println("Invalid input. Please enter a number.");
+			            }
+			        }
 
 			        System.out.println("ADD ISBN:");
 			        String isbn = scanner.nextLine();
+			        if (isbn == null || isbn.trim().isEmpty()) {
+			            System.out.println("ISBN cannot be null or empty");
+			            continue;
+			        }
+			        
 			        System.out.println("ADD Title:");
 			        String title = scanner.nextLine();
+			        if (title == null || title.trim().isEmpty()) {
+			            System.out.println("Title cannot be null or empty");
+			            continue;
+			        }
+			        
 			        System.out.println("ADD Release Year:");
 			        int releaseYear = Integer.parseInt(scanner.nextLine());
+			        if (releaseYear <= 0) {
+			            System.out.println("I don't think Moses wrote this book.");
+			            continue;
+			        }
+			        
 			        System.out.println("Add Page Number:");
 			        int pageNum = Integer.parseInt(scanner.nextLine());
+			        if (pageNum <= 0) {
+			            System.out.println("Page number must be a positive number");
+			            continue;
+			        }
 
 			        if(elementType == 1) {
 			            System.out.println("Add Author:");
 			            String author = scanner.nextLine();
+			            if (author == null || author.trim().isEmpty()) {
+			                System.out.println("Author cannot be null or empty");
+			                continue;
+			            }
+			            
 			            System.out.println("Add Genre:");
 			            String genre = scanner.nextLine();
+			            if (genre == null || genre.trim().isEmpty()) {
+			                System.out.println("Genre cannot be null or empty");
+			                continue;
+			            } 
 			            catalog.addElement(new Book(isbn, title, releaseYear, pageNum, author, genre));
+			            
 			        } else if(elementType == 2) {
 			            System.out.println("Add Periodicity: (WEEKLY, MONTHLY, SEMIANNUAL)");
-			            Magazine.Periodicity period = Magazine.Periodicity.valueOf(scanner.nextLine().toUpperCase());
+			            String periodStr = scanner.nextLine();
+			            Magazine.Periodicity period = null;
+			            try {
+			                period = Magazine.Periodicity.valueOf(periodStr.toUpperCase());
+			            } catch (IllegalArgumentException e) {
+			                System.out.println("Invalid input for Periodicity. Please try again with one of the following values: WEEKLY, MONTHLY, SEMIANNUAL.");
+			                continue;
+			            }
 			            catalog.addElement(new Magazine(isbn, title, releaseYear, pageNum, period));
 			        } else {
 			            System.out.println("Unvalid Type. Please Retry.");
 			        }
 			        break;
+			        
 				case 2:
 			        System.out.println("Add ISBN of the Element to remove:");
 			        String removeIsbn = scanner.nextLine();
 			        catalog.removeElement(removeIsbn);
 					break;
+					
 				case 3:
 					System.out.println("Add ISBN of the Element to search:");
 				    String searchIsbn = scanner.nextLine();

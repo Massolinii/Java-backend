@@ -10,9 +10,9 @@ public class Magazine extends Deployable {
 	private Periodicity period;
 	
 	public enum Periodicity {
-		SETTIMANALE,
-		MENSILE,
-		SEMESTRALE;
+		WEEKLY, 
+		MONTHLY, 
+		SEMIANNUAL;
 	}
 
 	public Magazine(String isbn, String title, int releaseYear, int pageNum, Periodicity period) {

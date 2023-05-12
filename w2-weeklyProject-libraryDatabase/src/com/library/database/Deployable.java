@@ -9,7 +9,6 @@ public abstract class Deployable {
 	private int pageNum;
 	
 	public Deployable(String isbn, String title, int releaseYear, int pageNum) {
-		super();
 		this.isbn = isbn;
 		this.title = title;
 		this.releaseYear = releaseYear;
