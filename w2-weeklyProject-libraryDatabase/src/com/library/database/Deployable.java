@@ -1,5 +1,6 @@
 package com.library.database;
 
+// Classe Astratta Deployable per creare Book e Magazine
 public abstract class Deployable {
 	
 	private String isbn;

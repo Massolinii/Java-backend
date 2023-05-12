@@ -5,7 +5,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
@@ -14,19 +17,30 @@ public class Catalog {
 	
 	private List<Deployable> items;
 	
+	private static final String CHARSET = "UTF-8";
+	private static final Logger logger = LoggerFactory.getLogger(Catalog.class);
 	private static String path = "data/catalog.txt";
 	private static File file = new File(path);
 	
 	public Catalog() {
-		items = new ArrayList<>();
+		items = Collections.synchronizedList(new ArrayList<>());
 	}
 	
-	public void addElement(Deployable item) {
+	public boolean addElement(Deployable item) {
+		if (searchISBN(item.getIsbn()).isPresent()) {
+			logger.error("Item with ISBN {} already exists", item.getIsbn());
+			return false;
+		}
         items.add(item);
+		return true;
     }
 	
-	public void removeElement(String isbn) {
-        items.removeIf(item -> item.getIsbn().equals(isbn));
+	public boolean removeElement(String isbn) {
+		boolean removed = items.removeIf(item -> item.getIsbn().equals(isbn));
+		if (!removed) {
+			logger.error("No item found with ISBN {}", isbn);
+		}
+		return removed;
     }
 
 	public Optional<Deployable> searchISBN(String isbn) {
@@ -50,40 +64,43 @@ public class Catalog {
 	
 	public void writeToDisk() throws IOException {
 		String data = items.stream()
-				.map(item -> item.toString())
+				.map(Deployable::toString)
 				.collect(Collectors.joining("\n"));
 		
 		try {
-			FileUtils.writeStringToFile(file, data, "UTF-8");
+			FileUtils.writeStringToFile(file, data, CHARSET);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error writing to disk", e);
+			throw e;
 		}
 	}
 	
-	public void loadFromDisk(String filename) throws IOException {
-		List<String> lines = FileUtils.readLines(file, "UTF-8");
-		
-		for (String line : lines) {
-			String[] parts = line.split(",");
-			Deployable item = null;
+	public void loadFromDisk() throws IOException {
+		try {
+			List<String> lines = FileUtils.readLines(file, CHARSET);
 			
-			if (parts.length > 0) {
-				 String type = parts[0];
-		         String[] itemParts = Arrays.copyOfRange(parts, 1, parts.length);
-		           
-				switch (type) {
-				case "Book" :
-					item = Book.fromString(String.join(",", itemParts));
-					break;
-				case "Magazine" :
-					item = Magazine.fromString(String.join(",", itemParts));
-					break;
+			items = lines.stream().map(line -> {
+				String[] parts = line.split(",");
+				Deployable item = null;
+				if (parts.length > 0) {
+					String type = parts[0];
+					String[] itemParts = Arrays.copyOfRange(parts, 1, parts.length);
+					
+					switch (type) {
+					case "Book":
+						item = Book.fromString(String.join(",", itemParts));
+						break;
+					case "Magazine":
+						item = Magazine.fromString(String.join(",", itemParts));
+						break;
+					}
 				}
-			}
+				return item;
+			}).filter(item -> item != null).collect(Collectors.toList());
 			
-			if (item != null) {
-				items.add(item);
-			}
+		} catch (IOException e) {
+			logger.error("Error loading from disk", e);
+			throw e;
 		}
 	}
 }

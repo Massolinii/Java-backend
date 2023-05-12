@@ -49,7 +49,7 @@ public class Magazine extends Deployable {
 		    return new Magazine(isbn, title, releaseYear, pageNum, period);
 	    } catch (NumberFormatException e) {
 	    	
-	    	// metterò log di errore qui
+	    	log.error("NumberFormatException in Magazine.fromString: ", e);
 	    	return null;
 	    }
 }}

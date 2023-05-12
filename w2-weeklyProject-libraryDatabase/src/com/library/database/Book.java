@@ -54,7 +54,7 @@ public class Book extends Deployable {
 		    
 		    return new Book(isbn, title, releaseYear, pageNum, author, genre);
 	    } catch (NumberFormatException e) {
-	    	// metterò log di errore qui
+	    	log.error("NumberFormatException in Book.fromString: ", e);
 	    	return null;
 	    }
 	    
