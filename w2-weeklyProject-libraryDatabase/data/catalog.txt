@@ -1,2 +1,12 @@
-Book,34567,Io e il mio orto,2010,40,Romolo,Gardening
-Book,666,Bibbia,33,1000,Romolo,Fantasy
+Book, 10001, Me&MyGarden, 2010, 140, Giorgione, Gardening
+Book, 10002, Coolest Magic Trick, 2014, 75, Mr Magic, Hobby
+Book, 10004, Siddharta, 1974, 207, Hermann Hesse, Religion
+Book, 10017, Rose Red, 2010, 40, Guy John, Romance
+Book, 10068, Origami: Fake or real?!, 2021, 120, Jessica J., Scoop
+Book, 10092, Siddharta II, 2020, 240, Hermann Hesse, Religion
+Magazine, 000034, Java Tutorial Vol.1, 2022, 360, SEMIANNUAL
+Magazine, 000037, Novella 2000, 2022, 40, WEEKLY
+Magazine, 000048, Java Tutorial Vol.2, 2022, 378, SEMIANNUAL
+Magazine, 000077, Java Tutorial Vol.3, 2023, 404, SEMIANNUAL
+Magazine, 000086, In Cucina con Mario, 2023, 34, MONTHLY
+Magazine, 000095, Java Tutorial Vol.4, 2023, 310, SEMIANNUAL

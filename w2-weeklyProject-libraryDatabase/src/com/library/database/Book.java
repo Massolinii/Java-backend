@@ -10,6 +10,7 @@ public class Book extends Deployable {
 	private String author;
 	private String genre;
 
+	// Costruttore della classe Book
 	public Book(String isbn, String title, int releaseYear, int pageNum, String author, String genre) {
 		super(isbn, title, releaseYear, pageNum);
 		this.author = author;
@@ -35,29 +36,25 @@ public class Book extends Deployable {
 
 	@Override
 	public String toString() {
-		return "Book," + getIsbn() + "," + getTitle() + "," + getReleaseYear() + "," + getPageNum() + "," + author + "," + genre;
+		return "Book, " + getIsbn() + ", " + getTitle() + ", " + getReleaseYear() + ", " + getPageNum() + ", " + author + ", " + genre;
 	}
 
-	public static Book fromString(String str) {
-	    String[] parts = str.split(",");
-	    if (parts.length != 7) {
-	        return null;
+	// Metodo statico per creare un oggetto Book da una stringa
+	public static Book fromString(String str) throws NumberFormatException {
+	    String[] parts = str.split(", ");
+	 // Se la lunghezza dell'array non è la lunghezza attesa (6) lancia un'eccezione
+	    if (parts.length != 6) {
+	        throw new IllegalArgumentException("Invalid book data");
 	    }
-	    
-	    try {
-	    	String isbn = parts[1];
-		    String title = parts[2];
-		    int releaseYear = Integer.parseInt(parts[3]);
-		    int pageNum = Integer.parseInt(parts[4]);
-		    String author = parts[5];
-		    String genre = parts[6];
-		    
-		    return new Book(isbn, title, releaseYear, pageNum, author, genre);
-	    } catch (NumberFormatException e) {
-	    	log.error("NumberFormatException in Book.fromString: ", e);
-	    	return null;
-	    }
-	    
+
+	    String isbn = parts[0];
+	    String title = parts[1];
+	    int releaseYear = Integer.parseInt(parts[2]);
+	    int pageNum = Integer.parseInt(parts[3]);
+	    String author = parts[4];
+	    String genre = parts[5];
+
+	    return new Book(isbn, title, releaseYear, pageNum, author, genre);
 	}
 	
 }

@@ -30,26 +30,34 @@ public class Magazine extends Deployable {
 
 	@Override
 	public String toString() {
-		return "Magazine," + getIsbn() + "," + getTitle() + "," + getReleaseYear() + "," + getPageNum() + "," + period;
+		return "Magazine, " + getIsbn() + ", " + getTitle() + ", " + getReleaseYear() + ", " + getPageNum() + ", " + period;
 	}
 	
+	// Metodo statico per creare un oggetto Magazine da una stringa
 	public static Magazine fromString(String str) {
-	    String[] parts = str.split(",");
-	    if (parts.length != 6) {
+	    String[] parts = str.split(", ");
+	 // Se la lunghezza dell'array non è la lunghezza attesa (5) lancia un'eccezione
+	    if (parts.length != 5) {
 	        return null;
 	    }
 
 	    try {
-		    String isbn = parts[1];
-		    String title = parts[2];
-		    int releaseYear = Integer.parseInt(parts[3]);
-		    int pageNum = Integer.parseInt(parts[4]);
-		    Periodicity period = Periodicity.valueOf(parts[5]);
-		    
-		    return new Magazine(isbn, title, releaseYear, pageNum, period);
+	        String isbn = parts[0];
+	        String title = parts[1];
+	        int releaseYear = Integer.parseInt(parts[2]);
+	        int pageNum = Integer.parseInt(parts[3]);
+	        Periodicity period;
+	        try {
+	            period = Periodicity.valueOf(parts[4]);
+	        } catch (IllegalArgumentException e) {
+	            log.error("Invalid Periodicity value in Magazine.fromString: " + parts[5], e);
+	            return null;
+	        }
+	        
+	        return new Magazine(isbn, title, releaseYear, pageNum, period);
 	    } catch (NumberFormatException e) {
-	    	
-	    	log.error("NumberFormatException in Magazine.fromString: ", e);
-	    	return null;
+	        log.error("NumberFormatException in Magazine.fromString: ", e);
+	        return null;
 	    }
-}}
+	}
+}

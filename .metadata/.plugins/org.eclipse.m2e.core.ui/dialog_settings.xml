@@ -64,12 +64,14 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="w2-weeklyProject-libraryDatabase"/>
 			<item value="w2-d4"/>
 			<item value="w2-d4-lesson"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="w2-weeklyProject-libraryDatabase"/>
 			<item value="w2-d4"/>
 			<item value="w2-d4-lesson"/>
 		</list>

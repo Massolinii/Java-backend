@@ -9,17 +9,23 @@ public class Library {
 	public static void main(String[] args) {
 		Catalog catalog = new Catalog();
 		Scanner scanner = new Scanner(System.in);
+		System.out.println("- - - - - - - - - - - - - - - - - - - - ");
+		System.out.println("-Welcome to Scavalcacinghie BookStore!-");
 		
+		// Ciclo principale
 		while (true) {
-			System.out.println("Welcome to Scavalcacinghie BookStore!");
-			System.out.println("1. Add an element to the Catalog.");
-			System.out.println("2. Remove an element from the Catalog.");
-			System.out.println("3. Search by ISBN.");
-			System.out.println("4. Search by Publication Year.");
-			System.out.println("5. Search by Author.");
-			System.out.println("6. Save current data to file.");
-			System.out.println("7. Load current data from file.");
-			System.out.println("0. Exit.");
+			System.out.println("- - - - - - - - - - - - - - - - - - - - ");
+			System.out.println("1. Add an element to the Catalog. - - -");
+			System.out.println("2. Remove an element from the Catalog.- ");
+			System.out.println("3. Search by ISBN.- - - - - - - - - - - ");
+			System.out.println("4. Search by Publication Year.- - - - - ");
+			System.out.println("5. Search by Author.- - - - - - - - - - ");
+			System.out.println("6. Save current data to file. - - - - -");
+			System.out.println("7. Load current data from file. - - - -");
+			System.out.println("8. Print the entire Catalog.- - - - - - ");
+			System.out.println("0. Exit.- - - - - - - - - - - - - - - - ");
+			System.out.println("- - - - - - - - - - - - - - - - - - - - ");
+			System.out.print("--> ");
 			
 			try {
 				int option = Integer.parseInt(scanner.nextLine());
@@ -160,15 +166,21 @@ public class Library {
 				        System.out.println("There was an error during file download...");
 				    }
 				    break;
+				case 8:
+				    System.out.println("Printing the catalog:");
+				    catalog.printCatalog();
+				    break;
 				case 0:
 					System.out.println("Arrivederci!");
 					scanner.close();
 					System.exit(0);
 				default:
+					// Opzioni non valide
 					System.out.println("Unvalid response. Please try again.");
 				}
 			} catch (NumberFormatException e) {
-				System.out.println("Please use a number from 1 to 8.");
+				// Gestisce un input non numerico
+				System.out.println("Please use a number from 1 to 8, or 0 to Exit.");
 
 			}
 		}
