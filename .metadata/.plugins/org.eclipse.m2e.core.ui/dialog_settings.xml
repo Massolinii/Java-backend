@@ -64,6 +64,11 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="w3-d3"/>
+			<item value="w3-d1"/>
+			<item value="w3-d2"/>
+			<item value="JpaSecondTry"/>
+			<item value="JPAProject"/>
 			<item value="w2-weeklyProject-libraryDatabase"/>
 			<item value="w2-d4"/>
 			<item value="w2-d4-lesson"/>
@@ -71,6 +76,11 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="w3-d3"/>
+			<item value="w3-d1"/>
+			<item value="w3-d2"/>
+			<item value="JpaSecondTry"/>
+			<item value="JPAProject"/>
 			<item value="w2-weeklyProject-libraryDatabase"/>
 			<item value="w2-d4"/>
 			<item value="w2-d4-lesson"/>
