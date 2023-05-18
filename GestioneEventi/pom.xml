@@ -38,11 +38,6 @@
     		<artifactId>slf4j-api</artifactId>
     		<version>2.0.7</version>
 		</dependency>
-		<dependency>
-			<groupId>JPAProject</groupId>
-			<artifactId>JPAProject</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
     </dependencies>
   
   <build>
