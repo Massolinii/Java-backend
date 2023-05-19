@@ -3,7 +3,8 @@ package dao;
 import java.util.List;
 
 import Enumerations.GenereConcerto;
-import model.*;
+import model.Concerto;
+import model.Evento;
 
 public interface IEventoDAO {
 	

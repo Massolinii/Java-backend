@@ -10,38 +10,42 @@ import dao.EventoDAO;
 import dao.LocationDAO;
 import dao.PartecipazioniDAO;
 import dao.PersonaDAO;
-import model.*;
+import model.Concerto;
+import model.Location;
+import model.Partecipazione;
+import model.Persona;
 
 public class MainProject {
 
 	public static void main(String[] args) {
 		
-		Location spiaggia = new Location();
-		spiaggia.setNome("Epicode Beack");
-		spiaggia.setCitta("Roma");
+		Location l1 = new Location();
+		l1.setNome("Epicode");
+		l1.setCitta("Roma");
 		
-		LocationDAO spiaggiaDao = new LocationDAO();
-		spiaggiaDao.save(spiaggia);
+		LocationDAO ld1 = new LocationDAO();
+		ld1.save(l1);
 		
-		Concerto madonna = new Concerto();
-		madonna.setTitolo("Madonn");
-		madonna.setDataEvento(LocalDate.now());
-		madonna.setDescrizione("Concerto della Madonna");
-		madonna.setGenere(GenereConcerto.ROCK);
-		madonna.setInStreaming(true);
-		madonna.setLocation(spiaggia);
-		madonna.setNumeroMassimoPartecipanti(10);
-		madonna.setTipoEvento(TipoEvento.PRIVATO);
-		
+		Concerto c1 = new Concerto();
+		c1.setTitolo("SuperConcerto");
+		c1.setDataEvento(LocalDate.now());
+		c1.setDescrizione("Super concerto Epicode");
+		c1.setGenere(GenereConcerto.ROCK);
+		c1.setInStreaming(true);
+		c1.setLocation(l1);
+		c1.setNumeroMassimoPartecipanti(10);
+		c1.setTipoEvento(TipoEvento.PRIVATO);
+
 		EventoDAO evd1 = new EventoDAO();
-		evd1.save(madonna);
+		evd1.save(c1);
 		
-		Persona p1 = new Persona("Mario", "Rossi", "m.rossi@mario.com", LocalDate.of(1999, 01, 29), Sesso.MASCHIO);
+		Persona p1 = new Persona("Mario", "Rossi", "m.rossi@example.com", LocalDate.of(2000, 8, 15) , Sesso.MASCHIO);
+
+		PersonaDAO pd1 = new PersonaDAO();
+		pd1.save(p1);
 		
-		PersonaDAO ped1 = new PersonaDAO();
-		ped1.save(p1);
+		Partecipazione par1 = new Partecipazione(p1, c1, StatoPartecipazione.CONFERMATA);
 		
-		Partecipazione par1 = new Partecipazione(p1, madonna, StatoPartecipazione.CONFERMATA);
 		PartecipazioniDAO pard1 = new PartecipazioniDAO();
 		pard1.save(par1);
 	}

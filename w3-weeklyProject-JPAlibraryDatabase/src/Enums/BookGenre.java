@@ -1,0 +1,13 @@
+package Enums;
+
+public enum BookGenre {
+	ADVENTURE,
+	BIOGRAPHY,
+	COOKING,
+	FANTASY,
+	MISTERY,
+	HORROR,
+	ROMANTIC,	
+	THRILLER,
+	OTHER
+}

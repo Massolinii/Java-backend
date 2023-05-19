@@ -101,9 +101,11 @@ public class EventoDAO implements IEventoDAO {
 	public List<Concerto> getConcertiInStreaming(Boolean streaming) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		try {
+			//Query q = em.createQuery("SELECT c FROM Concerto c WHERE c.inStreaming = :streaming");
 			Query q = em.createNamedQuery("concertiInStreaming");
 			q.setParameter("streaming", streaming);
 			return q.getResultList();
+			
 		} finally {
 			em.close();
 		}
@@ -113,6 +115,8 @@ public class EventoDAO implements IEventoDAO {
 	public List<Concerto> getConcertiPerGenere(List<GenereConcerto> generiConcerto) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 		try {
+																				//('Rock', 'Punk', 'Metal')
+			//Query q = em.createQuery("SELECT c FROM Concerto c WHERE c.genere IN :listaGenere");
 			Query q = em.createNamedQuery("concertiPerGenere");
 			q.setParameter("streaming", generiConcerto);
 			return q.getResultList();

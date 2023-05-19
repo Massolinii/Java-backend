@@ -4,31 +4,30 @@ import javax.persistence.Entity;
 
 @Entity
 public class PartitaDiCalcio extends Evento {
-	
-	private String SquadraCasa;
-	private String SquadraOspite;
-	private String SquadraVincente = null;
+
+	private String squadraDiCasa;
+	private String squadraOspite;
+	private String squadraVincente = null;
 	private Integer numeroGolCasa = 0;
 	private Integer numeroGolOspite = 0;
 	
-	
-	public String getSquadraCasa() {
-		return SquadraCasa;
+	public String getSquadraDiCasa() {
+		return squadraDiCasa;
 	}
-	public void setSquadraCasa(String squadraCasa) {
-		SquadraCasa = squadraCasa;
+	public void setSquadraDiCasa(String squadraDiCasa) {
+		this.squadraDiCasa = squadraDiCasa;
 	}
 	public String getSquadraOspite() {
-		return SquadraOspite;
+		return squadraOspite;
 	}
 	public void setSquadraOspite(String squadraOspite) {
-		SquadraOspite = squadraOspite;
+		this.squadraOspite = squadraOspite;
 	}
 	public String getSquadraVincente() {
-		return SquadraVincente;
+		return squadraVincente;
 	}
 	public void setSquadraVincente(String squadraVincente) {
-		SquadraVincente = squadraVincente;
+		this.squadraVincente = squadraVincente;
 	}
 	public Integer getNumeroGolCasa() {
 		return numeroGolCasa;
@@ -44,8 +43,9 @@ public class PartitaDiCalcio extends Evento {
 	}
 	@Override
 	public String toString() {
-		return "PartitaDiCalcio [SquadraCasa=" + SquadraCasa + ", SquadraOspite=" + SquadraOspite + ", SquadraVincente="
-				+ SquadraVincente + ", numeroGolCasa=" + numeroGolCasa + ", numeroGolOspite=" + numeroGolOspite + "]";
+		return "PartitaDiCalcio [squadraDiCasa=" + squadraDiCasa + ", squadraOspite=" + squadraOspite
+				+ ", squadraVincente=" + squadraVincente + ", numeroGolCasa=" + numeroGolCasa + ", numeroGolOspite="
+				+ numeroGolOspite + "]";
 	}
-	
+
 }

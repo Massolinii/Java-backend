@@ -1,7 +1,7 @@
 package Enumerations;
 
 public enum GenereConcerto {
-	CLASSICO,
+	CLASSICO, 
 	ROCK,
 	POP
 }
