@@ -37,19 +37,19 @@ public class Loan {
 	@Column(nullable = false)
 	private LocalDate loanEnd;
 	
-	@Column(nullable = false)
+	@Column
 	private LocalDate loanReturn;
 
 	public Loan() {
 		super();
 	}
 
-	public Loan(User user, Element loanElement, LocalDate loanStart, LocalDate loanEnd, LocalDate loanReturn) {
+	public Loan(User user, Element loanElement, LocalDate loanStart, LocalDate loanReturn) {
 		super();
 		this.user = user;
 		this.loanElement = loanElement;
 		this.loanStart = loanStart;
-		this.loanEnd = loanEnd;
+		this.loanEnd = loanStart.plusDays(30);
 		this.loanReturn = loanReturn;
 	}
 

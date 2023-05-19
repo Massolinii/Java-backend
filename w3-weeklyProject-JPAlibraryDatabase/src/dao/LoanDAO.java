@@ -5,8 +5,9 @@ import javax.persistence.EntityManager;
 import model.Loan;
 import utils.JpaUtil;
 
-public class LoanDAO {
+public class LoanDAO implements ILoanDAO {
 	
+	@Override
 	public void save(Loan ln) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 	    try {
@@ -21,6 +22,7 @@ public class LoanDAO {
 	    }
 	}
 	
+	@Override
 	public void update(Loan ln) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 	    try {
@@ -35,6 +37,7 @@ public class LoanDAO {
 	    }
 	}
 	
+	@Override
 	public void delete(Loan ln) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 	    try {
@@ -49,6 +52,7 @@ public class LoanDAO {
 	    }
 	}
 	
+	@Override
 	public Loan getById(Integer id) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
 	    Loan loan = null;
