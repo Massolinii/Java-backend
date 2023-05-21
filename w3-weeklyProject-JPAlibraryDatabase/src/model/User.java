@@ -78,7 +78,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [cardId=" + cardId + ", name=" + name + ", surname=" + surname + ", birthday=" + birthday + "]";
+		return "USER || ID : " + cardId + " | NAME : " + name + " " + surname + " | BIRTHDAY " + birthday;
 	}
 	
 	

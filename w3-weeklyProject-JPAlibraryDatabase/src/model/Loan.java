@@ -52,6 +52,13 @@ public class Loan {
 		this.loanEnd = loanStart.plusDays(30);
 		this.loanReturn = loanReturn;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return "LOAN || " + user + " BORROWED ITEM : " + loanElement 
+				+ " | ON DATE : " + loanStart + " | RETURNED : " + (loanReturn != null ? "YES" : "NO") + (loanReturn != null ? "" : " | EXP. BY " + loanEnd) ;
+	}
 
 	public User getUser() {
 		return user;
@@ -93,10 +100,6 @@ public class Loan {
 		this.loanReturn = loanReturn;
 	}
 
-	@Override
-	public String toString() {
-		return "Loan [id=" + id + ", user=" + user + ", loanElement=" + loanElement + ", loanStart=" + loanStart
-				+ ", loanEnd=" + loanEnd + ", loanReturn=" + loanReturn + "]";
-	}
+
 	
 }

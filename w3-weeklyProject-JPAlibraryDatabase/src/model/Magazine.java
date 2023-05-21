@@ -28,7 +28,7 @@ public class Magazine extends Element {
 
 	@Override
 	public String toString() {
-		return "Magazine [magPeriodicity=" + magPeriodicity + "]";
+		return "MAGAZINE || TITLE: " + getTitle() + " | PERIODICITY " + magPeriodicity + " ( " + getPublicationYear() + " | Pages : " + getPageNumber() + " )";
 	}
 	
 }

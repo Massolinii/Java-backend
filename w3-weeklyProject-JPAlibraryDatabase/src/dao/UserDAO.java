@@ -1,30 +1,11 @@
 package dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 
-import model.Loan;
 import model.User;
 import utils.JpaUtil;
 
-public class UserDAO implements IUserDAO{
-	
-	public List<Loan> getLoansFromId(Integer id) {
-		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
-	    List<Loan> loans = null;
-	    try {
-	        User user = em.find(User.class, id);
-	        if (user != null) {
-	            loans = user.getLoans();
-	        }
-	    } catch (Exception e) {
-	        System.out.println("There was an error getting loans from this ID: " + e);
-	    } finally {
-	        em.close();
-	    }
-	    return loans;
-	}
+public class UserDAO implements UserDAOInteface{
 
 	@Override
 	public void save(User user) {
@@ -72,11 +53,17 @@ public class UserDAO implements IUserDAO{
 	}
 
 	@Override
-	public User getById(Integer id) {
+	public User getUserById(Integer id) {
 		EntityManager em = JpaUtil.getEntityManagerFactory().createEntityManager();
+		System.out.println("Searching for USER ID -> " + id);
 	    User user = null;
 	    try {
 	        user = em.find(User.class, id);
+	        if (user != null) {
+	        	System.out.println(user);
+	        } else {
+	        	System.out.println("No USER was found for this ID.");
+	        }
 	    } catch (Exception e) {
 	        System.out.println("Error getting the user by id: " + e);
 	    } finally {

@@ -64,6 +64,7 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="w3-weeklyProject-JPAlibraryDatabase"/>
 			<item value="w3-d3"/>
 			<item value="w3-d1"/>
 			<item value="w3-d2"/>
@@ -76,6 +77,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="w3-weeklyProject-JPAlibraryDatabase"/>
 			<item value="w3-d3"/>
 			<item value="w3-d1"/>
 			<item value="w3-d2"/>

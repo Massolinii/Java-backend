@@ -42,7 +42,7 @@ public class Book extends Element{
 
 	@Override
 	public String toString() {
-		return "Book [author=" + author + ", genre=" + genre + "]";
+		return "BOOK || TITLE: " + getTitle() + " | AUTHOR " + author + " | GENRE " + genre + " ( " + getPublicationYear() + " | Pages : " + getPageNumber() + " )";
 	}
 	
 }
