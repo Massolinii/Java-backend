@@ -55,9 +55,9 @@
     <fullyQualifiedTypeName name="dao.UserDAO"/>
     <fullyQualifiedTypeName name="dao.LoanDAO"/>
     <fullyQualifiedTypeName name="model.User"/>
-    <fullyQualifiedTypeName name="model.Loan"/>
     <fullyQualifiedTypeName name="dao.ElementDAO"/>
     <fullyQualifiedTypeName name="model.Element"/>
     <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="model.Loan"/>
 </qualifiedTypeNameHistroy>
