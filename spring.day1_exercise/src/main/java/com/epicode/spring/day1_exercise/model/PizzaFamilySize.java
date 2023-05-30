@@ -20,6 +20,10 @@ public class PizzaFamilySize extends Pizza {
 		this.calories = 1.95;
 	}
 	
+	public String getMenuItemLine() {
+		return this.name + " - Cal: x" + this.calories + " - Price: +" + this.price + "€";
+	}
+	
 	
 
 }

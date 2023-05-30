@@ -12,6 +12,6 @@ public class Menu {
 	
 	 private List<Pizza> menuPizza = new ArrayList<Pizza>();
 	 private List<Drink> menuDrink = new ArrayList<Drink>();
-	 private List<PizzaTopping> menuTopping = new ArrayList<PizzaTopping>();
-	 private List<Gifts> menuGift = new ArrayList<Gifts>();
+	 private List<Topping> menuTopping = new ArrayList<Topping>();
+	 private List<Franchise> menuFranchise = new ArrayList<Franchise>();
 }

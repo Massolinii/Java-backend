@@ -11,7 +11,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class PizzaTopping extends FoodItem {
+public class Topping extends FoodItem {
 
 	private Pizza pizza;
+
+	public Topping(String name, double price, double calories) {
+		super(name, price, calories);
+	}
+	
+	
 }

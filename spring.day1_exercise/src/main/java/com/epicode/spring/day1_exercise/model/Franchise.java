@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class Gifts {
+public class Franchise {
 	
 	private String name;
 	private double price;
