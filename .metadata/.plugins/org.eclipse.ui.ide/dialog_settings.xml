@@ -11,6 +11,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\massi\Desktop\WorkSpace"/>
 			<item value="C:\Users\massi\Desktop\build-week-1-PublicTransportDatabase\JavaBW1_publicTransportSystem"/>
 			<item value="C:\Users\massi\Desktop\build-week-1-PublicTransportDatabase"/>
 			<item value="C:\Users\massi\eclipse-workspace\w3-weeklyProject-JPAlibraryDatabase"/>

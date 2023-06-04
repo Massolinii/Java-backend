@@ -1,0 +1,33 @@
+package com.epicode.workSpaceReservationApplication.enums;
+
+public enum RandomCities {
+	ROMA,
+	MILANO,
+	TORINO,
+	NAPOLI,
+	PALERMO,
+	GENOVA,
+	BOLOGNA,
+	FIRENZE,
+	BARI,
+	CATANIA,
+	VENEZIA,
+	VERONA,
+	MESSINA,
+	PADOVA,
+	TRIESTE,
+	BRESCIA,
+	TARANTO,
+	PRATO,
+	MODENA,
+	CAGLIARI,
+	PARMA,
+	FORLÌ,
+	PERUGIA,
+	RAVENNA,
+	FERRARA,
+	RIMINI,
+	SALERNO,
+	SASSARI,
+	PISA
+}
