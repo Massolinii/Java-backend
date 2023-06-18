@@ -100,6 +100,8 @@
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
 			<item value="C:\Users\massi\Desktop\miao"/>
+			<item value="C:\Users\massi\Desktop\miao\Sistema_antincendio-main"/>
+			<item value="C:\Users\massi\eclipse-workspace\APIGestionePrenotazioni-main"/>
 			<item value="C:\Users\massi\Desktop\GestioneDispositivi3-2-main"/>
 			<item value="C:\Users\massi\Desktop\WorkSpace"/>
 			<item value="C:\Users\massi\Desktop\GestioneDispositivi3 2"/>

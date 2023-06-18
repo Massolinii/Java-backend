@@ -44,7 +44,6 @@
     <fullyQualifiedTypeName name="com.epicode.workSpaceReservationApplication.model.Building"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Access"/>
     <fullyQualifiedTypeName name="jakarta.persistence.AccessType"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="com.GestioneDispositivi3.auth.entity.Role"/>
     <fullyQualifiedTypeName name="com.GestioneDispositivi3.auth.entity.ERole"/>
     <fullyQualifiedTypeName name="com.GestioneDispositivi3.auth.entity.RoleRepository"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 </qualifiedTypeNameHistroy>
